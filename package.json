@@ -1,0 +1,42 @@
+{
+  "name": "commander-parser",
+  "version": "1.0.0",
+  "description": "node.js command-line parser",
+  "author": "zxf",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zxf/commander-parser.git"
+  },
+  "keywords": [
+    "command",
+    "option",
+    "parser",
+    "argparser"
+  ],
+  "main": "index.js",
+  "engines": {
+    "node": ">= 0.6.x"
+  },
+  "files": [
+    "LICENSE",
+    "index.js"
+  ],
+  "dependencies": {
+    "commander": "~2.8.0"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-jshint": "^0.11.2",
+    "grunt-mocha-test": "^0.12.7",
+    "mocha": "^2.2.5"
+  },
+  "scripts": {
+    "lint": "grunt jshint",
+    "test": "grunt test"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zxf/commander-parser/issues"
+  },
+  "homepage": "https://github.com/zxf/commander-parser#readme"
+}
