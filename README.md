@@ -1,7 +1,7 @@
 # Commander-Parser.js
 
 
-[![Build Status](https://travis-ci.org/zxf/commander-parser.svg)](http://travis-ci.org/zxf/commander-parser.js)
+[![Build Status](https://travis-ci.org/zxf/commander-parser.svg?branch=master)](https://travis-ci.org/zxf/commander-parser)
 
   A command-line parser for [node.js](http://nodejs.org) like python's `argparser`, inspired by [commander.js](https://github.com/tj/commander.js).
 
