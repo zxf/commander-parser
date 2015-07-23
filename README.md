@@ -1,3 +1,42 @@
+# Commander-Parser.js
+
+
+[![Build Status](https://travis-ci.org/zxf/commander-parser.svg)](http://travis-ci.org/zxf/commander-parser.js)
+
+  A command-line parser for [node.js](http://nodejs.org) like python's `argparser`, inspired by [commander.js](https://github.com/tj/commander.js).
+
+## Command
+
+```javascript
+var command = parser().command(<command>, <help>)
+```
+
+## Argument
+
+```javascript
+parser().argument(<name>, <help>, {
+    "narg": <narg> ,
+    "required": <boolean>,
+    "dest": <dest>,
+    "const": <conse>,
+    "type": <type>
+})
+```
+
+## Option
+
+```javascript
+parser().option(<flag>, <help>, {
+    "action": <action> ,
+    "required": <boolean>,
+    "dest": <dest>,
+    "const": <conse>,
+    "type": <type>
+})
+```
+
+## Examples
+
 ```javascript
 parser()
     .option(['-f', '--file'], 'write file names', {
