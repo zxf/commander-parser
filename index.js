@@ -259,9 +259,6 @@ var Parser = function(name){
                 if(typeHandler) {
                     value = typeHandler(value, error, opt);
                 }
-                if(opt.opts.choices && opt.opts.choices.indexOf(value) == -1) {
-                    error("argument `%s' not in choices", opt.dest.toUpperCase());
-                }
                 value = actionHandler(value, memo[opt.dest], opt.opts, error);
                 if(!isInvalid(value)) {
                     memo[opt.dest] = value;
@@ -676,6 +673,14 @@ Parser.action("count", function(value, memo) {
 /**
  * Default command types
  */
+Parser.type("string", function(value, error, opt) {
+    value = '' + value;
+    if(!value){
+        return undefined;
+    }
+    return value;
+});
+
 Parser.type("int", function(value, error, opt) {
     value = parseInt(value);
     if(isNaN(value)) {
@@ -694,6 +699,13 @@ Parser.type("float", function(value, error, opt) {
     return value;
 });
 
+Parser.type("choice", function(value, error, opt){
+    if(opt.choices && opt.choices.indexOf(value) == -1) {
+        var name = opt.metavar || opt.dest;
+        error("argument `%s' not in choices", name.toUpperCase());
+    }
+    return value;
+});
 /**
  * Expose function.
  */

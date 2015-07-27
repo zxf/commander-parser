@@ -209,6 +209,14 @@ describe('Test options', function() {
                 "A": 12,
                 "B": 12
             });
+            p = parser()
+                .option("-a", "test function type", {
+                    "type": "choice",
+                    "choices": ["0", "10"]
+                });
+            assert.deepEqual(p.parseArgv(["-a", "0"]), {
+                "A": "0",
+            });
 
             /*
             assert.throws(p.parseArgv(["-a", "test", "-b", "12"]), {
