@@ -460,7 +460,7 @@ var Parser = function(name){
         var processArgv = argv.slice(0, 2);
         argv = argv.slice(2);
         var parser = this.makeParser();
-        var options;
+        var options = null;
 
         var command = argv[0];
         if(command) {
@@ -476,7 +476,7 @@ var Parser = function(name){
             });
         }
 
-        if(!options) {
+        if(options === null) {
 
             parser.parse(processArgv.concat(argv));
 

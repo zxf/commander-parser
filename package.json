@@ -1,6 +1,6 @@
 {
   "name": "commander-parser",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "node.js command-line parser",
   "author": "zxf",
   "repository": {
